@@ -1,0 +1,11 @@
+C:\Users\Pablo\Desktop\C# Visual Code\TupacThings\AlgoritmosJorge\ProyectoABMCFinal-PabloMarceloBenitezPasserini\ReglaDeNegocio\bin\Debug\net8.0\ReglaDeNegocio.deps.json
+C:\Users\Pablo\Desktop\C# Visual Code\TupacThings\AlgoritmosJorge\ProyectoABMCFinal-PabloMarceloBenitezPasserini\ReglaDeNegocio\bin\Debug\net8.0\ReglaDeNegocio.dll
+C:\Users\Pablo\Desktop\C# Visual Code\TupacThings\AlgoritmosJorge\ProyectoABMCFinal-PabloMarceloBenitezPasserini\ReglaDeNegocio\bin\Debug\net8.0\ReglaDeNegocio.pdb
+C:\Users\Pablo\Desktop\C# Visual Code\TupacThings\AlgoritmosJorge\ProyectoABMCFinal-PabloMarceloBenitezPasserini\ReglaDeNegocio\obj\Debug\net8.0\ReglaDeNegocio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Pablo\Desktop\C# Visual Code\TupacThings\AlgoritmosJorge\ProyectoABMCFinal-PabloMarceloBenitezPasserini\ReglaDeNegocio\obj\Debug\net8.0\ReglaDeNegocio.AssemblyInfoInputs.cache
+C:\Users\Pablo\Desktop\C# Visual Code\TupacThings\AlgoritmosJorge\ProyectoABMCFinal-PabloMarceloBenitezPasserini\ReglaDeNegocio\obj\Debug\net8.0\ReglaDeNegocio.AssemblyInfo.cs
+C:\Users\Pablo\Desktop\C# Visual Code\TupacThings\AlgoritmosJorge\ProyectoABMCFinal-PabloMarceloBenitezPasserini\ReglaDeNegocio\obj\Debug\net8.0\ReglaDeNegocio.csproj.CoreCompileInputs.cache
+C:\Users\Pablo\Desktop\C# Visual Code\TupacThings\AlgoritmosJorge\ProyectoABMCFinal-PabloMarceloBenitezPasserini\ReglaDeNegocio\obj\Debug\net8.0\ReglaDeNegocio.dll
+C:\Users\Pablo\Desktop\C# Visual Code\TupacThings\AlgoritmosJorge\ProyectoABMCFinal-PabloMarceloBenitezPasserini\ReglaDeNegocio\obj\Debug\net8.0\refint\ReglaDeNegocio.dll
+C:\Users\Pablo\Desktop\C# Visual Code\TupacThings\AlgoritmosJorge\ProyectoABMCFinal-PabloMarceloBenitezPasserini\ReglaDeNegocio\obj\Debug\net8.0\ReglaDeNegocio.pdb
+C:\Users\Pablo\Desktop\C# Visual Code\TupacThings\AlgoritmosJorge\ProyectoABMCFinal-PabloMarceloBenitezPasserini\ReglaDeNegocio\obj\Debug\net8.0\ref\ReglaDeNegocio.dll
