@@ -2,7 +2,7 @@
 {
     public class Pais
     {
-        public int CodigoInternacional { get; set; }
+        public int CodigoInternacional { get; }
         public string Nombre { get; set; }
         public string Capital { get; set; }
 

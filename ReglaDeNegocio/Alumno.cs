@@ -7,7 +7,7 @@ namespace ReglaDeNegocio
 {
     public class Alumno
     {
-        public int DNI { get; set; }
+        public int DNI { get; }
         public string Nombre { get; set; }
         public int Nota { get; set; }
         public int CodigoNacionalidad { get; set; }
