@@ -89,7 +89,11 @@ namespace CapaDePresentacion
                 );
                 return;
             }
-            MostrarMensajeConEspera(_controladorAlumnos.InformacionAlumnoConNotaMasAlta());
+            string infoAlumno;
+
+            infoAlumno = _controladorAlumnos.InformacionAlumnoConNotaMasAlta();
+            
+            MostrarMensajeConEspera(infoAlumno);
         }
 
         private void MostrarMenuInformacionAlumno()
@@ -239,7 +243,7 @@ namespace CapaDePresentacion
         {
             string mensajePedir = "Ingrese el codigo internacional: ";
             string mensajeNoEsNumero =
-                "El codigo internacional deben ser solo caracteres numericos, intente nuevamente.";
+                "El codigo internacional deben ser solo caracteres numericos mayores a cero, intente nuevamente.";
             string mensajeNumeroNegativo =
                 "El codigo internacional no pueden ser numeros negativos.";
             return IngresarNumero(mensajePedir, mensajeNoEsNumero, mensajeNumeroNegativo);
@@ -249,7 +253,7 @@ namespace CapaDePresentacion
         {
             string mensajePedir = "Ingrese la nota: ";
             string mensajeNoEsNumero =
-                "La nota debe ser solo caracteres numericos, intente nuevamente.";
+                "La nota debe ser solo caracteres numericos mayores a cero, intente nuevamente.";
             string mensajeNumeroNegativo = "La nota no puede ser negativa.";
             return IngresarNumero(mensajePedir, mensajeNoEsNumero, mensajeNumeroNegativo);
         }
@@ -265,7 +269,7 @@ namespace CapaDePresentacion
         {
             string mensajePedir = "Ingrese el DNI: ";
             string mensajeNoEsNumero =
-                "El DNI deben ser solo caracteres numericos sin punto o espacios, intente nuevamente.";
+                "El DNI deben ser solo caracteres numericos mayores que 0, sin punto o espacios, intente nuevamente.";
             string mensajeNumeroNegativo =
                 "El DNI no puede ser un numero menor que 0, intente nuevamente.";
             return IngresarNumero(mensajePedir, mensajeNoEsNumero, mensajeNumeroNegativo);

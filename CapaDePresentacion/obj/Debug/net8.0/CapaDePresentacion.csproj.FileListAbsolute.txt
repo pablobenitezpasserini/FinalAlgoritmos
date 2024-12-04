@@ -16,3 +16,4 @@ C:\Users\Pablo\Desktop\C# Visual Code\TupacThings\AlgoritmosJorge\ProyectoABMCFi
 C:\Users\Pablo\Desktop\C# Visual Code\TupacThings\AlgoritmosJorge\ProyectoABMCFinal-PabloMarceloBenitezPasserini\CapaDePresentacion\bin\Debug\net8.0\ReglaDeNegocio.dll
 C:\Users\Pablo\Desktop\C# Visual Code\TupacThings\AlgoritmosJorge\ProyectoABMCFinal-PabloMarceloBenitezPasserini\CapaDePresentacion\bin\Debug\net8.0\ReglaDeNegocio.pdb
 C:\Users\Pablo\Desktop\C# Visual Code\TupacThings\AlgoritmosJorge\ProyectoABMCFinal-PabloMarceloBenitezPasserini\CapaDePresentacion\obj\Debug\net8.0\CapaDePr.C47967BF.Up2Date
+C:\Users\Pablo\Desktop\C# Visual Code\TupacThings\AlgoritmosJorge\ProyectoABMCFinal-PabloMarceloBenitezPasserini\CapaDePresentacion\obj\Debug\net8.0\CapaDePresentacion.sourcelink.json

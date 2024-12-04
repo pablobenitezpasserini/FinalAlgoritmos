@@ -174,7 +174,7 @@ namespace CapaDePresentacion
         private int IngresarCodigoInternacional()
         {
             string mensajePedir = "Ingrese el codigo internacional: ";
-            string mensajeNoEsNumero = "El codigo internacional deben ser solo caracteres numericos, intente nuevamente.";
+            string mensajeNoEsNumero = "El codigo internacional deben ser solo caracteres numericos mayores a cero, intente nuevamente.";
             string mensajeNumeroNegativo = "El codigo internacional no pueden ser numeros negativos.";
             return IngresarNumero(mensajePedir, mensajeNoEsNumero, mensajeNumeroNegativo);
         }

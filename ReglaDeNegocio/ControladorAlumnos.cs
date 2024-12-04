@@ -62,6 +62,8 @@ namespace ReglaDeNegocio
 
         public string InformacionAlumnoConNotaMasAlta()
         {
+            string infoAlumno;
+            string infoNacionalidad;
             int notaMasAlta = 0;
             Alumno mejorAlumno = new Alumno();
 
@@ -73,7 +75,17 @@ namespace ReglaDeNegocio
                     notaMasAlta = alumno.Nota;
                 }
             }
-            return $"El alumno con la nota mas alta es:\n{InformacionAlumno(mejorAlumno.DNI)}";
+            infoAlumno = $"El alumno con la nota mas alta es:\n{InformacionAlumno(mejorAlumno.DNI)}";
+            try
+            {
+                infoNacionalidad = InformacionNacionalidadAlumno(mejorAlumno.DNI);
+            }
+            catch (NacionalidadNoEncontradaException)
+            {
+                infoNacionalidad = "Nacionalidad: desconocida";
+            }
+            infoAlumno += $"\n{infoNacionalidad}";
+            return infoAlumno;
         }
 
         public string InformacionAlumno(int dni)
@@ -105,7 +117,7 @@ namespace ReglaDeNegocio
                 {
                     int codigoInternacional = alumno.CodigoNacionalidad;
                     throw new NacionalidadNoEncontradaException(
-                        $"La nacionalidad con el codigo internacional {codigoInternacional} ha sido removida del sistema"
+                        $"La nacionalidad con el codigo internacional {codigoInternacional} ha sido removida del sistema."
                     );
                 }
             }

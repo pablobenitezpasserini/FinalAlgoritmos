@@ -9,3 +9,4 @@ C:\Users\Pablo\Desktop\C# Visual Code\TupacThings\AlgoritmosJorge\ProyectoABMCFi
 C:\Users\Pablo\Desktop\C# Visual Code\TupacThings\AlgoritmosJorge\ProyectoABMCFinal-PabloMarceloBenitezPasserini\ReglaDeNegocio\obj\Debug\net8.0\refint\ReglaDeNegocio.dll
 C:\Users\Pablo\Desktop\C# Visual Code\TupacThings\AlgoritmosJorge\ProyectoABMCFinal-PabloMarceloBenitezPasserini\ReglaDeNegocio\obj\Debug\net8.0\ReglaDeNegocio.pdb
 C:\Users\Pablo\Desktop\C# Visual Code\TupacThings\AlgoritmosJorge\ProyectoABMCFinal-PabloMarceloBenitezPasserini\ReglaDeNegocio\obj\Debug\net8.0\ref\ReglaDeNegocio.dll
+C:\Users\Pablo\Desktop\C# Visual Code\TupacThings\AlgoritmosJorge\ProyectoABMCFinal-PabloMarceloBenitezPasserini\ReglaDeNegocio\obj\Debug\net8.0\ReglaDeNegocio.sourcelink.json
