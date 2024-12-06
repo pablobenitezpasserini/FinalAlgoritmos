@@ -28,7 +28,7 @@ public class TestControladorPaises
         bool existe;
         controladorPaises.AgregarPais(new Pais(54, "Argentina", "Buenos Aires"));
         //Act
-        existe = controladorPaises.PaisExiste(54);
+        existe = controladorPaises.CodigoPaisExiste(54);
         //Assert
         Assert.AreEqual(existe, true);
     }

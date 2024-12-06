@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ReglaDeNegocio.ExcepcionesApp;
 
 namespace ReglaDeNegocio
 {
@@ -13,12 +14,22 @@ namespace ReglaDeNegocio
         {
             _paises = new List<Pais>();
         }
+
         //agregar pais
         public bool AgregarPais(Pais pais)
         {
-            if (PaisExiste(pais.CodigoInternacional))
+            //implementar excepciones para capital existe y nombre pais existe
+            if (CodigoPaisExiste(pais.CodigoInternacional))
             {
                 return false;
+            }
+            else if (NombrePaisExiste(pais.Nombre))
+            {
+                throw new NombrePaisYaExiste();
+            }
+            else if (NombreCapitalExiste(pais.Capital))
+            {
+                throw new NombreCapitalYaExiste();
             }
             else
             {
@@ -27,31 +38,81 @@ namespace ReglaDeNegocio
             }
         }
 
-        public bool PaisExiste(int codigoInternacional)
+        private bool NombreCapitalExiste(string nombreCapital)
         {
-            foreach(Pais pais in _paises)
+            foreach (Pais pais in _paises)
             {
-                if(pais.CodigoInternacional == codigoInternacional)
+                if (nombreCapital.Equals(pais.Capital, StringComparison.OrdinalIgnoreCase))
                 {
                     return true;
                 }
             }
             return false;
         }
-        //modificar pais
-        public bool ModificarPais(string nombre, string capital, int codigoInternacional)
+
+        private bool NombrePaisExiste(string nombrePais)
         {
-            for(int i = 0; i < _paises.Count; i++)
+            foreach (Pais pais in _paises)
             {
-                if(_paises[i].CodigoInternacional == codigoInternacional)
+                if (nombrePais.Equals(pais.Nombre, StringComparison.OrdinalIgnoreCase))
                 {
-                    _paises[i].Nombre = nombre;
-                    _paises[i].Capital = capital;
                     return true;
                 }
             }
             return false;
-        }    
+        }
+
+        public bool CodigoPaisExiste(int codigoInternacional)
+        {
+            foreach (Pais pais in _paises)
+            {
+                if (pais.CodigoInternacional == codigoInternacional)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        //modificar pais
+        public void ModificarNombrePais(string nombrePais, int codigoInternacional)
+        {
+            bool valido = NombrePaisExiste(nombrePais);
+            if (!valido)
+            {
+                for (int i = 0; i < _paises.Count; i++)
+                {
+                    if (_paises[i].CodigoInternacional == codigoInternacional)
+                    {
+                        _paises[i].Nombre = nombrePais;
+                    }
+                }
+            }
+            else
+            {
+                throw new NombrePaisYaExiste();
+            }
+        }
+
+        public void ModificarNombreCapital(string nombreCapital, int codigoInternacional) 
+        {
+            bool valido = NombreCapitalExiste(nombreCapital);
+            if (!valido)
+            {
+                for (int i = 0; i < _paises.Count; i++)
+                {
+                    if (_paises[i].CodigoInternacional == codigoInternacional)
+                    {
+                        _paises[i].Capital = nombreCapital;
+                    }
+                }
+            }
+            else
+            {
+                throw new NombreCapitalYaExiste();
+            }
+        }
+
         //consultar pais por codigo
         public string InformacionPais(int codigoInternacional)
         {
@@ -69,7 +130,7 @@ namespace ReglaDeNegocio
 
         public Pais? BuscarPais(int codigoInternacional)
         {
-            foreach (Pais pais in _paises) 
+            foreach (Pais pais in _paises)
             {
                 if (pais.CodigoInternacional == codigoInternacional)
                 {
@@ -78,11 +139,12 @@ namespace ReglaDeNegocio
             }
             return null;
         }
+
         //eliminar pais
         public bool EliminarPais(int codigoInternacional)
         {
             Pais? baja = BuscarPais(codigoInternacional);
-            
+
             if (baja != null)
             {
                 _paises.Remove(baja);
@@ -93,6 +155,7 @@ namespace ReglaDeNegocio
                 return false;
             }
         }
+
         public bool IsPaisesVacio()
         {
             return _paises.Count == 0;

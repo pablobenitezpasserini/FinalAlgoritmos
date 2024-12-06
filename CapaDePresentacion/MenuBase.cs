@@ -65,12 +65,11 @@ namespace CapaDePresentacion
             Console.ReadKey();
             Console.Clear();
         }
-
         protected string TomarInput()
         {
             string? input = Console.ReadLine();
             Console.Clear();
-            return input.Trim();
+            return input.Trim().ToLower();
         }
     }
 }

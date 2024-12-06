@@ -112,3 +112,4 @@ C:\Users\Pablo\Desktop\C# Visual Code\TupacThings\AlgoritmosJorge\ProyectoABMCFi
 C:\Users\Pablo\Desktop\C# Visual Code\TupacThings\AlgoritmosJorge\ProyectoABMCFinal-PabloMarceloBenitezPasserini\UnitTestNegocio\bin\Debug\net8.0\CoverletSourceRootsMapping_UnitTestNegocio
 C:\Users\Pablo\Desktop\C# Visual Code\TupacThings\AlgoritmosJorge\ProyectoABMCFinal-PabloMarceloBenitezPasserini\UnitTestNegocio\bin\Debug\net8.0\ReglaDeNegocio.dll
 C:\Users\Pablo\Desktop\C# Visual Code\TupacThings\AlgoritmosJorge\ProyectoABMCFinal-PabloMarceloBenitezPasserini\UnitTestNegocio\bin\Debug\net8.0\ReglaDeNegocio.pdb
+C:\Users\Pablo\Desktop\C# Visual Code\TupacThings\AlgoritmosJorge\ProyectoABMCFinal-PabloMarceloBenitezPasserini\UnitTestNegocio\obj\Debug\net8.0\UnitTestNegocio.sourcelink.json

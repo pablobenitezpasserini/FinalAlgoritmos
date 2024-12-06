@@ -128,7 +128,7 @@ namespace CapaDePresentacion
                 MostrarMensajeConEspera(
                     ex.Message
                         + "\n"
-                        + "Por favor actualize la nacionalidad del alumno desde la opcion \"2- Modificar Alumno\""
+                        + "Por favor actualize la nacionalidad del alumno desde la opcion \"2- Modificar Alumno\" o cargue un nuevo pais con el codigo internacional mencionado antes."
                 );
                 infoNacionalidad = "Nacionalidad: desconocida";
             }

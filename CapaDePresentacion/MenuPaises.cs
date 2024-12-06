@@ -45,44 +45,54 @@ namespace CapaDePresentacion
                         MostrarMenuInformacionPais();
                         break;
                     case "5":
-                        MostrarMensajeConEspera("Volviendo al menu de paises y alumnos\nPresione enter para continuar...");
+                        MostrarMensajeConEspera(
+                            "Volviendo al menu de paises y alumnos\nPresione enter para continuar..."
+                        );
                         break;
                     default:
-                        MostrarMensajeConEspera("La opcion ingresada no existe, intente nuevamente.");
+                        MostrarMensajeConEspera(
+                            "La opcion ingresada no existe, intente nuevamente."
+                        );
                         break;
                 }
-            }while(opcion != "5");
+            } while (opcion != "5");
         }
 
         private void MostrarMenuInformacionPais()
         {
-            if(_controladorPaises.IsPaisesVacio())
+            if (_controladorPaises.IsPaisesVacio())
             {
-                MostrarMensajeConEspera("El listado de paises se encuentra vacio, ingrese paises primero.");
+                MostrarMensajeConEspera(
+                    "El listado de paises se encuentra vacio, ingrese paises primero."
+                );
                 return;
             }
-            string info; 
+            string info;
             int codigoInternacional;
 
             codigoInternacional = IngresarCodigoInternacional();
             info = _controladorPaises.InformacionPais(codigoInternacional);
 
-            if(info.Length > 0)
+            if (info.Length > 0)
             {
                 Console.WriteLine("Los datos del pais son...");
                 MostrarMensajeConEspera(info);
             }
             else
             {
-                MostrarMensajeConEspera($"El codigo internacional {codigoInternacional} no existe en el sistema.");
+                MostrarMensajeConEspera(
+                    $"El codigo internacional {codigoInternacional} no existe en el sistema."
+                );
             }
         }
 
         private void MostrarMenuEliminarPais()
         {
-            if(_controladorPaises.IsPaisesVacio())
+            if (_controladorPaises.IsPaisesVacio())
             {
-                MostrarMensajeConEspera("El listado de paises se encuentra vacio, ingrese paises primero.");
+                MostrarMensajeConEspera(
+                    "El listado de paises se encuentra vacio, ingrese paises primero."
+                );
                 return;
             }
 
@@ -90,48 +100,91 @@ namespace CapaDePresentacion
 
             codigoInternacional = IngresarCodigoInternacional();
 
-            if(_controladorPaises.EliminarPais(codigoInternacional))
+            if (_controladorPaises.EliminarPais(codigoInternacional))
             {
                 MostrarMensajeConEspera("Pais eliminado correctamente.");
             }
             else
             {
-                MostrarMensajeConEspera($"No existe un pais con el codigo internacional: {codigoInternacional} en el listado.");
+                MostrarMensajeConEspera(
+                    $"No existe un pais con el codigo internacional: {codigoInternacional} en el listado."
+                );
             }
         }
 
         private void MostrarMenuModificarPais()
         {
-            if(_controladorPaises.IsPaisesVacio())
+            if (_controladorPaises.IsPaisesVacio())
             {
-                MostrarMensajeConEspera("El listado de paises se encuentra vacio, ingrese paises primero.");
+                MostrarMensajeConEspera(
+                    "El listado de paises se encuentra vacio, ingrese paises primero."
+                );
                 return;
             }
             string info;
             string nombrePais;
-            string nombreCapital; 
+            string nombreCapital;
             int codigoInternacional;
-            bool operacionExitosa;
 
             codigoInternacional = IngresarCodigoInternacional();
             info = _controladorPaises.InformacionPais(codigoInternacional);
 
-            if(info.Length > 0)
+            if (info.Length > 0)
             {
                 Console.WriteLine("Los datos del pais a modificar son...");
                 MostrarMensajeConEspera(info + "\nPresione enter para continuar...");
             }
             else
             {
-                MostrarMensajeConEspera("El codigo internacional ingresado no existe en el sistema.");
+                MostrarMensajeConEspera(
+                    "El codigo internacional ingresado no existe en el sistema."
+                );
                 return;
             }
-            nombrePais = IngresarNombrePais();
-            nombreCapital = IngresarCapital();
-
-            operacionExitosa = _controladorPaises.ModificarPais(nombrePais, nombreCapital, codigoInternacional);
-            
-            MostrarMensajeConEspera("Datos modificados correctamente.");
+            Console.WriteLine("--Ingrese la opcion deseada:");
+            Console.WriteLine("1- Modificar nombre del pais");
+            Console.WriteLine("2- Modificar capital del pais");
+            Console.WriteLine("3- Volver al menu de paises");
+            string opcion = TomarInput();
+            bool tareaCompletada = false;
+            do
+            {
+                switch (opcion)
+                {
+                    case "1":
+                        nombrePais = IngresarNombrePais();
+                        tareaCompletada = true;
+                        try
+                        {
+                            _controladorPaises.ModificarNombrePais(nombrePais, codigoInternacional);
+                            MostrarMensajeConEspera("Datos modificados correctamente.");
+                        }
+                        catch (Exception ex)
+                        {
+                            MostrarMensajeConEspera(ex.Message);
+                        }
+                        break;
+                    case "2":
+                        nombreCapital = IngresarCapital();
+                        tareaCompletada = true;
+                        try 
+                        {
+                            _controladorPaises.ModificarNombreCapital(nombreCapital, codigoInternacional);
+                            MostrarMensajeConEspera("Datos modificados correctamente.");
+                        }
+                        catch(Exception ex)
+                        {
+                            MostrarMensajeConEspera(ex.Message);
+                        }
+                        break;
+                    case "3":
+                        tareaCompletada = true;
+                        break;
+                    default:
+                        MostrarMensajeConEspera("Opcion invalida, intente nuevamente...");
+                        break;
+                }
+            } while (!tareaCompletada);
         }
 
         private void MostrarMenuIngresarPais()
@@ -144,16 +197,25 @@ namespace CapaDePresentacion
             codigoInternacional = IngresarCodigoInternacional();
             nombre = IngresarNombrePais();
             capital = IngresarCapital();
-            
-            operacionExitosa = _controladorPaises.AgregarPais(new Pais(codigoInternacional, nombre, capital));
-
-            if (operacionExitosa)
+            try
             {
-                MostrarMensajeConEspera("Pais guardado exitosamente.");
+                operacionExitosa = _controladorPaises.AgregarPais(
+                    new Pais(codigoInternacional, nombre, capital)
+                );
+                if (operacionExitosa)
+                {
+                    MostrarMensajeConEspera("Pais guardado exitosamente.");
+                }
+                else
+                {
+                    MostrarMensajeConEspera(
+                        "El codigo internacional ingresado ya existe en nuestro sistema, intente nuevamente."
+                    );
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MostrarMensajeConEspera("El codigo internacional ingresado ya existe en nuestro sistema, intente nuevamente.");
+                MostrarMensajeConEspera(ex.Message);
             }
         }
 
@@ -174,8 +236,10 @@ namespace CapaDePresentacion
         private int IngresarCodigoInternacional()
         {
             string mensajePedir = "Ingrese el codigo internacional: ";
-            string mensajeNoEsNumero = "El codigo internacional deben ser solo caracteres numericos mayores a cero, intente nuevamente.";
-            string mensajeNumeroNegativo = "El codigo internacional no pueden ser numeros negativos.";
+            string mensajeNoEsNumero =
+                "El codigo internacional deben ser solo caracteres numericos mayores a cero, intente nuevamente.";
+            string mensajeNumeroNegativo =
+                "El codigo internacional no pueden ser numeros negativos.";
             return IngresarNumero(mensajePedir, mensajeNoEsNumero, mensajeNumeroNegativo);
         }
     }
