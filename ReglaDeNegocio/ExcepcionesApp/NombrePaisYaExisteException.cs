@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace ReglaDeNegocio.ExcepcionesApp
 {
-    public class NombrePaisYaExiste : Exception
+    public class NombrePaisYaExisteException : Exception
     {
-        public NombrePaisYaExiste()
+        public NombrePaisYaExisteException()
             : base(
                 "El nombre del pais ingresado ya esta registrado en nuestro sistema, intente nuevamente"
             ) { }

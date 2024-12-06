@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace ReglaDeNegocio.ExcepcionesApp
 {
-    public class NombreCapitalYaExiste : Exception
+    public class NombreCapitalYaExisteException : Exception
     {
-        public NombreCapitalYaExiste()
+        public NombreCapitalYaExisteException()
             : base("El nombre de la capital ingresada ya esta registrada en nuestro sistema, intente nuevamente.") { }
     }
 }

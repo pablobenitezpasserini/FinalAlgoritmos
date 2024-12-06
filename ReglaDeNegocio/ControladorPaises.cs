@@ -25,11 +25,11 @@ namespace ReglaDeNegocio
             }
             else if (NombrePaisExiste(pais.Nombre))
             {
-                throw new NombrePaisYaExiste();
+                throw new NombrePaisYaExisteException();
             }
             else if (NombreCapitalExiste(pais.Capital))
             {
-                throw new NombreCapitalYaExiste();
+                throw new NombreCapitalYaExisteException();
             }
             else
             {
@@ -90,7 +90,7 @@ namespace ReglaDeNegocio
             }
             else
             {
-                throw new NombrePaisYaExiste();
+                throw new NombrePaisYaExisteException();
             }
         }
 
@@ -109,7 +109,7 @@ namespace ReglaDeNegocio
             }
             else
             {
-                throw new NombreCapitalYaExiste();
+                throw new NombreCapitalYaExisteException();
             }
         }
 
