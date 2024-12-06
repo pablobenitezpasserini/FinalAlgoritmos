@@ -42,7 +42,7 @@ namespace ReglaDeNegocio
         {
             foreach (Pais pais in _paises)
             {
-                if (nombreCapital.Equals(pais.Capital, StringComparison.OrdinalIgnoreCase))
+                if (nombreCapital.Equals(pais.Capital))
                 {
                     return true;
                 }
@@ -54,7 +54,7 @@ namespace ReglaDeNegocio
         {
             foreach (Pais pais in _paises)
             {
-                if (nombrePais.Equals(pais.Nombre, StringComparison.OrdinalIgnoreCase))
+                if (nombrePais.Equals(pais.Nombre))
                 {
                     return true;
                 }

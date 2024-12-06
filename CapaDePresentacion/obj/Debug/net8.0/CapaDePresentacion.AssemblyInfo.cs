@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CapaDePresentacion")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2ee41b8e3057276230ca5046364ec85aa0771fb3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+81cbd1bf4e4999328c2950ac71e0d2fdd2c0fbec")]
 [assembly: System.Reflection.AssemblyProductAttribute("CapaDePresentacion")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CapaDePresentacion")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
