@@ -19,10 +19,12 @@ namespace ReglaDeNegocio
                 return false;
             }
         }
+
         public bool EsTextoVacio(string texto)
         {
             return texto.Length == 0;
         }
+
         public bool EsNumeroNegativo(int num)
         {
             return num < 0;

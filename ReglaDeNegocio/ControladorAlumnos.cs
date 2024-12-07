@@ -75,7 +75,8 @@ namespace ReglaDeNegocio
                     notaMasAlta = alumno.Nota;
                 }
             }
-            infoAlumno = $"El alumno con la nota mas alta es:\n{InformacionAlumno(mejorAlumno.DNI)}";
+            infoAlumno =
+                $"El alumno con la nota mas alta es:\n{InformacionAlumno(mejorAlumno.DNI)}";
             try
             {
                 infoNacionalidad = InformacionNacionalidadAlumno(mejorAlumno.DNI);
@@ -201,9 +202,11 @@ namespace ReglaDeNegocio
             {
                 throw new NombreInvalidoException();
             }
-            else if(TextoConNumero(alumno.Nombre))
+            else if (TextoConNumero(alumno.Nombre))
             {
-                throw new StringConNumeroException("El nombre deben ser solo letras, intente nuevamente.");
+                throw new StringConNumeroException(
+                    "El nombre deben ser solo letras, intente nuevamente."
+                );
             }
             else if (AlumnoExiste(alumno.DNI))
             {
@@ -213,9 +216,9 @@ namespace ReglaDeNegocio
 
         private bool TextoConNumero(string nombre)
         {
-            foreach(char letra in nombre)
+            foreach (char letra in nombre)
             {
-                if(char.IsNumber(letra))
+                if (char.IsNumber(letra))
                 {
                     return true;
                 }

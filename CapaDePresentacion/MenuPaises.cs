@@ -167,12 +167,15 @@ namespace CapaDePresentacion
                     case "2":
                         nombreCapital = IngresarCapital();
                         tareaCompletada = true;
-                        try 
+                        try
                         {
-                            _controladorPaises.ModificarNombreCapital(nombreCapital, codigoInternacional);
+                            _controladorPaises.ModificarNombreCapital(
+                                nombreCapital,
+                                codigoInternacional
+                            );
                             MostrarMensajeConEspera("Datos modificados correctamente.");
                         }
-                        catch(Exception ex)
+                        catch (Exception ex)
                         {
                             MostrarMensajeConEspera(ex.Message);
                         }

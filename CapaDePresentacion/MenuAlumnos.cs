@@ -92,7 +92,7 @@ namespace CapaDePresentacion
             string infoAlumno;
 
             infoAlumno = _controladorAlumnos.InformacionAlumnoConNotaMasAlta();
-            
+
             MostrarMensajeConEspera(infoAlumno);
         }
 

@@ -35,11 +35,15 @@ namespace CapaDePresentacion
                 switch (opcion)
                 {
                     case "1":
-                        MostrarMensajeConEspera("Direccionandolo al menu de paises\nPresione enter para continuar...");
+                        MostrarMensajeConEspera(
+                            "Direccionandolo al menu de paises\nPresione enter para continuar..."
+                        );
                         _menuPaises.MenuPaisesPrincipal();
                         break;
                     case "2":
-                        MostrarMensajeConEspera("Direccionandolo al menu de alumnos\nPresione enter para continuar...");
+                        MostrarMensajeConEspera(
+                            "Direccionandolo al menu de alumnos\nPresione enter para continuar..."
+                        );
                         _menuAlumnos.MenuAlumnosPrincipal();
                         break;
                     case "3":
@@ -49,7 +53,7 @@ namespace CapaDePresentacion
                         MostrarMensajeConEspera("Opcion incorrecta, vuelva a inventar");
                         break;
                 }
-            }while(opcion != "3");
+            } while (opcion != "3");
         }
     }
 }

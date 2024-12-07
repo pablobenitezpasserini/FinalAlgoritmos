@@ -19,10 +19,12 @@ namespace ReglaDeNegocio
             this.Nota = nota;
             this.CodigoNacionalidad = codigoNacionalidad;
         }
+
         public Alumno()
         {
             this.Nombre = "";
         }
+
         public override string ToString()
         {
             return $"Nombre: {this.Nombre}\nNota: {this.Nota}\nDNI: {this.DNI}";

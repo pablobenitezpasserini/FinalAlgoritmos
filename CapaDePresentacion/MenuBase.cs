@@ -9,6 +9,7 @@ namespace CapaDePresentacion
     public abstract class MenuBase
     {
         protected Validador _validador = new Validador();
+
         protected int IngresarNumero(string mensaje1, string mensaje2, string mensaje3)
         {
             bool isValid;
@@ -29,17 +30,17 @@ namespace CapaDePresentacion
                 {
                     numeroValido = int.Parse(numeroTexto);
 
-                    if(_validador.EsNumeroNegativo(numeroValido))
+                    if (_validador.EsNumeroNegativo(numeroValido))
                     {
                         MostrarMensajeConEspera(mensaje3);
                         isValid = false;
                     }
                 }
-
-            }while(!isValid);
+            } while (!isValid);
 
             return numeroValido;
         }
+
         protected string IngresarTexto(string mensaje1, string mensaje2)
         {
             bool isValid;
@@ -50,21 +51,22 @@ namespace CapaDePresentacion
                 texto = TomarInput();
                 isValid = _validador.EsTextoVacio(texto);
 
-                if(isValid)
+                if (isValid)
                 {
                     MostrarMensajeConEspera(mensaje2);
                 }
-                
-            }while(isValid);
+            } while (isValid);
 
             return texto;
         }
+
         protected void MostrarMensajeConEspera(string mensaje)
         {
             Console.WriteLine(mensaje);
             Console.ReadKey();
             Console.Clear();
         }
+
         protected string TomarInput()
         {
             string? input = Console.ReadLine();

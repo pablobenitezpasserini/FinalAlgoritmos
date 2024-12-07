@@ -56,7 +56,7 @@ public class TestControladorPaises
         //Act
         encontrado = controladorPaises.BuscarPais(1);
         //Assert
-        Assert.AreEqual(encontrado, null);        
+        Assert.AreEqual(encontrado, null);
     }
 
     [TestMethod]
@@ -69,6 +69,6 @@ public class TestControladorPaises
         controladorPaises.AgregarPais(new Pais(54, "Argentina", "Buenos Aires"));
         isPaisesVacio = controladorPaises.IsPaisesVacio();
         //Assert
-        Assert.AreEqual(isPaisesVacio, false);     
+        Assert.AreEqual(isPaisesVacio, false);
     }
 }
