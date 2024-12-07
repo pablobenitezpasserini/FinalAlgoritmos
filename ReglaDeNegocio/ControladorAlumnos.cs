@@ -201,10 +201,26 @@ namespace ReglaDeNegocio
             {
                 throw new NombreInvalidoException();
             }
+            else if(TextoConNumero(alumno.Nombre))
+            {
+                throw new StringConNumeroException("El nombre deben ser solo letras, intente nuevamente.");
+            }
             else if (AlumnoExiste(alumno.DNI))
             {
                 throw new AlumnoYaExisteException();
             }
+        }
+
+        private bool TextoConNumero(string nombre)
+        {
+            foreach(char letra in nombre)
+            {
+                if(char.IsNumber(letra))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }
