@@ -31,11 +31,27 @@ namespace ReglaDeNegocio
             {
                 throw new NombreCapitalYaExisteException();
             }
+            else if(TextoConNumero(pais.Nombre) || TextoConNumero(pais.Capital))
+            {
+                throw new StringConNumeroException("El nombre y la capital del pais deben ser solo letras sin numeros, intente nuevamente.");
+            }
             else
             {
                 _paises.Add(pais);
                 return true;
             }
+        }
+
+        private bool TextoConNumero(string texto)
+        {
+            foreach(char letra in texto)
+            {
+                if(char.IsNumber(letra))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         private bool NombreCapitalExiste(string nombreCapital)
@@ -77,6 +93,10 @@ namespace ReglaDeNegocio
         //modificar pais
         public void ModificarNombrePais(string nombrePais, int codigoInternacional)
         {
+            if(TextoConNumero(nombrePais))
+            {
+                throw new StringConNumeroException("El nombre del pais no debe contener numeros, intente nuevamente.");
+            }
             bool valido = NombrePaisExiste(nombrePais);
             if (!valido)
             {
@@ -96,6 +116,10 @@ namespace ReglaDeNegocio
 
         public void ModificarNombreCapital(string nombreCapital, int codigoInternacional) 
         {
+            if(TextoConNumero(nombreCapital))
+            {
+                throw new StringConNumeroException("La capital del pais no debe contener numeros, intente nuevamente.");
+            }
             bool valido = NombreCapitalExiste(nombreCapital);
             if (!valido)
             {
