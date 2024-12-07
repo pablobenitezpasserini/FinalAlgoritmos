@@ -208,6 +208,14 @@ namespace ReglaDeNegocio
                     "El nombre deben ser solo letras, intente nuevamente."
                 );
             }
+            else if (pais.CodigoInternacional < 0)
+            {
+                throw new CodigoInternacionalNegativoException();
+            }
+            else if (alumno.DNI < 0)
+            {
+                throw new DocumentoNacionalDeIdentidadNegativoException();
+            }
             else if (AlumnoExiste(alumno.DNI))
             {
                 throw new AlumnoYaExisteException();

@@ -37,6 +37,10 @@ namespace ReglaDeNegocio
                     "El nombre y la capital del pais deben ser solo letras sin numeros, intente nuevamente."
                 );
             }
+            else if (pais.CodigoInternacional < 0)
+            {
+                throw new CodigoInternacionalNegativoException();
+            }
             else
             {
                 _paises.Add(pais);
